@@ -3,8 +3,9 @@ const db = require("../data/database");
 class Quote {
   static async getRandomQuote() {
     const quotes = db.getDb.collection("quotes").find().toArray();
-    const randomQuote = Math.floor(Math.random() * quotes.length);
-    return randomQuote;
+    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomQuoteIndex];
+    return randomQuote.text;
   }
 }
 

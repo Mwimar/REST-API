@@ -4,7 +4,7 @@ const db = require("./data/database");
 
 const app = express();
 
-app.use("/quotes", quoteRoutes);
+app.use("/quote", quoteRoutes);
 
 app.use(function (error, req, res, next) {
   res.status(500).json({
