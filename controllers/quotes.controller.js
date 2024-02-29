@@ -1,9 +1,9 @@
-function getQuote(req, res, next) {
+function getRandomQuote(req, res, next) {
   res.json({
     quote: "Quotes....",
   });
 }
 
 module.exports = {
-  getQuote: getQuote,
+  getRandomQuote: getRandomQuote,
 };
