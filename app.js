@@ -6,6 +6,12 @@ const app = express();
 
 app.use("/quotes", quoteRoutes);
 
+app.use(function (error, req, res, next) {
+  res.status(500).json({
+    message: "Something Went Wrong",
+  });
+});
+
 db.initDb()
   .then(function () {
     app.listen("3000");
